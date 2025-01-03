@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluesky Thread Viewer</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/replies.css">
+    <link rel="stylesheet" href="styles/embeds.css">
+    <script>
+        // Debug the full URL and search parameters
+        console.log('Full URL:', window.location.href);
+        console.log('Search string:', window.location.search);
+        
+        // Parse and debug URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log('All URL parameters:', Array.from(urlParams.entries()));
+        
+        // Get and check the specific URL parameter
+        const POST_URL = urlParams.get('url');
+        console.log('Raw URL parameter:', POST_URL);
+        console.log('Decoded URL parameter:', POST_URL ? decodeURIComponent(POST_URL) : null);
+        
+        if (!POST_URL || POST_URL.trim() === '') {
+            console.log('No URL found, redirecting to index');
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+    <div id="thread-container"></div>
+
+    <script type="module" src="scripts/config.js"></script>
+    <script type="module"src="scripts/formatters.js"></script>
+    <script type="module" src="scripts/templates.js"></script>
+    <script type="module" src="scripts/interactions.js"></script>
+    <script type="module" src="scripts/processThread.js"></script>
+    <script type="module" src="scripts/fetchThread.js"></script>
+    <script type="module" src="scripts/fetchAndSave.js"></script>
+    <script type="module" src="scripts/threadViewer.js"></script>
+    <script type="module" src="scripts/dynamicStyles.js"></script>
+    <script src="scripts/formatters.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="scripts/interactions.js"></script>
+    <script src="scripts/processThread.js"></script>
+    <script src="scripts/fetchThread.js"></script>
+    <script src="scripts/fetchAndSave.js"></script>
+    <script src="scripts/resizeNotifier.js"></script>
+    <script>
+        // Only initialize if we have a URL
+        if (POST_URL) {
+            document.addEventListener('DOMContentLoaded', () => {
+                refreshThreadData();
+            });
+        }
+    </script>
+</body>
+</html> 

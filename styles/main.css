@@ -1,0 +1,132 @@
+:root {
+    --site-background: #050a0f;
+    --post-background: #15202b;
+    --border-color: #38444d;
+    --text-primary: #ffffff;
+    --text-secondary: #8b98a5;
+    --hover-background: #1c2732;
+    --username-blue: #4a7ba5;
+    --root-user-blue: #7cc2ff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    padding: 20px;
+    background: var(--site-background);
+    color: var(--text-primary);
+}
+
+.main-post {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    padding: 16px;
+    background: var(--post-background);
+}
+
+.reply-post {
+    cursor: pointer;
+    position: relative;
+    border-left: none;
+    margin: 2px 0;
+}
+
+.expanded-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.expanded-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.display-name {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.handle {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.expanded-timestamp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: inherit;
+}
+
+.expanded-timestamp .dot {
+    color: var(--text-secondary);
+}
+
+.post-stats {
+    display: flex;
+    gap: 16px;
+    color: var(--text-secondary);
+    font-size: inherit;
+}
+
+/* Update color for links */
+a {
+    color: var(--username-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.main-post .display-name {
+    color: var(--root-user-blue) !important;
+}
+
+.expanded-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: inherit;
+    color: var(--text-secondary);
+}
+
+.post-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: inherit;
+}
+
+.post-link:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.post-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.post-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link-separator {
+    color: var(--text-secondary);
+    opacity: 0.6;
+} 

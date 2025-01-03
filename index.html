@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluesky Thread Viewer</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/landing.css">
+    <script src="scripts/config.js"></script>
+    <script src="scripts/threadEmbed.js"></script>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            
+            const input = document.getElementById('urlInput');
+            const url = input.value.trim();
+            console.log('Form submitted with URL:', url);
+            
+            if (!url) {
+                console.log('No URL entered');
+                return false;
+            }
+
+            // Get the current origin
+            const origin = window.location.origin;
+            
+            // Construct absolute URL with .html extension
+            const targetUrl = `${origin}/thread.html?url=${encodeURIComponent(url)}`;
+            console.log('Navigating to:', targetUrl);
+            
+            // Use replace for navigation
+            window.location.replace(targetUrl);
+            return false;
+        }
+
+        // Add featured threads when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('featured-threads');
+            if (container && window.appConfig?.FEATURED_THREADS) {
+                container.innerHTML = `
+                    <h2>Featured Discussions</h2>
+                    ${window.appConfig.FEATURED_THREADS.map(thread => `
+                        <div class="featured-section">
+                            <thread-embed url="${thread.url}"></thread-embed>
+                        </div>
+                    `).join('')}
+                `;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="landing-header">
+            <h1>Bluesky Thread Viewer</h1>
+            <form onsubmit="return validateForm(event);">
+                <div class="input-group">
+                    <input type="text" id="urlInput" name="url" placeholder="Paste a Bluesky post URL here..." required />
+                    <button type="submit">View Thread</button>
+                </div>
+            </form>
+        </div>
+        <hr class="separator">
+        <div id="featured-threads"></div>
+    </div>
+</body>
+</html>
