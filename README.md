@@ -11,14 +11,14 @@ This is a static web application using vanilla JavaScript, HTML, and CSS. No bui
 ```
 /
 ├── index.html          # Landing page
-├── thread.html         # Thread viewer page
-├── styles/            # CSS files
+├── thread.html         # Thread viewer
+├── styles/             # CSS 
 │   ├── main.css
 │   ├── landing.css
 │   ├── thread.css
 │   ├── replies.css
 │   └── embeds.css
-└── scripts/           # JavaScript files
+└── scripts/           # Scripts
     ├── config.js
     ├── api.js
     ├── templates.js
@@ -26,13 +26,3 @@ This is a static web application using vanilla JavaScript, HTML, and CSS. No bui
     ├── formatters.js
     └── threadEmbed.js
 ```
-
-### Running Locally
-
-1. Clone the repository
-2. Open `index.html` in your browser
-3. For local development, use a local web server (e.g., `python -m http.server` or Live Server in VS Code)
-
-## License
-
-MIT 
