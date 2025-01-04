@@ -30,7 +30,7 @@ body {
     margin-bottom: 8px;
     border: 1px solid var(--border-color);
     border-radius: 0;
-    padding: 12px;
+    padding: 12px 12px;
     background: var(--post-background);
     width: 100%;
     box-sizing: border-box;

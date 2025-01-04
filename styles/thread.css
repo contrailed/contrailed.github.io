@@ -6,6 +6,10 @@
     .reply-post {
         margin-left: calc(var(--level, 0) * 12px) !important;
     }
+
+    .thread-container {
+        padding: 0 8px;
+    }
 }
 
 @media (min-width: 601px) {
@@ -15,10 +19,10 @@
 }
 
 .thread-container {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 12px;
     box-sizing: border-box;
     overflow-x: hidden;
 }
