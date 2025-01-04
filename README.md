@@ -19,7 +19,7 @@ This is a static web application using vanilla JavaScript, HTML, and CSS. No bui
 │   ├── replies.css
 │   └── embeds.css
 └── scripts/           # Scripts
-    ├── config.js
+    ├── config.js 
     ├── api.js
     ├── templates.js
     ├── interactions.js
