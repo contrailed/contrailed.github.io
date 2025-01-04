@@ -15,14 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('URL input value:', url);
         
         if (!url) {
-            alert('Please enter a Bluesky post URL');
-            return;
+            alert('Please enter a Contrail post URL');
+            return false;
         }
         
-        console.log('URL validation check...');
-        if (!url.includes('bsky.app/profile/') || !url.includes('/post/')) {
-            alert('Please enter a valid Bluesky post URL');
-            return;
+        if (!url.includes('bsky.app')) {
+            alert('Please enter a valid Contrail post URL');
+            return false;
         }
         
         const threadUrl = `thread.html?url=${encodeURIComponent(url)}`;

@@ -1,25 +1,28 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1600px;
+    margin: 0 0px;
+    padding: 0 0px;
     min-height: 100vh;
 }
 
 .landing-header {
-    padding-top: 20vh;
+    padding-top: 15vh;
+    margin: 0 0px;
+    padding: 0 0px;
 }
 
 h1 {
     text-align: center;
-    margin: 0 0 10vh 0;
+    margin: 0 0 8vh 0;
     color: #4A5D7B;
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 h2 {
     text-align: center;
-    margin: 20px 0;
+    margin: 16px 0;
     color: #4A5D7B;
+    font-size: 1.3em;
 }
 
 .input-group {
@@ -34,7 +37,7 @@ h2 {
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 button {
@@ -44,7 +47,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     white-space: nowrap;
     transition: background-color 0.2s;
 }
@@ -55,7 +58,7 @@ button:hover {
 
 .separator {
     max-width: 800px;
-    margin: 15vh auto;
+    margin: 12vh auto;
     border: none;
     border-top: 1px solid var(--border-color);
 }
@@ -70,18 +73,18 @@ button:hover {
 
 #featured-threads h2 {
     grid-column: 1 / -1;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .featured-section {
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .featured-section h2 {
     text-align: center;
     color: var(--text-primary);
-    font-size: 1.2em;
-    margin: 8px 0;
+    font-size: 1.1em;
+    margin: 6px 0;
 }
 
 .featured-section hr {

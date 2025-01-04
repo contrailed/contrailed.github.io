@@ -1,6 +1,6 @@
 ## Usage
 
-Paste a Bluesky post URL into the input field and press Enter or click "View Thread" to see the full discussion.
+Paste a Contrail post URL into the input field and press Enter or click "View Thread" to see the full discussion.
 
 ## Development
 
