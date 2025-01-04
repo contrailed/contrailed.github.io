@@ -29,10 +29,15 @@ function createMainPostContent(post) {
             </div>
             <div class="post-links">
                 ${parentUrl ? `
-                <a href="thread.html?url=${encodeURIComponent(parentUrl)}" class="post-link" target="_blank" rel="noopener noreferrer">Open Parent in Thread View</a>
-                <span class="link-separator">|</span>
+                <a href="${window.location.origin}/thread.html?url=${parentUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Contrail</a>
+                <span class="link-separator">·</span>
+                <a href="${parentUrl}" target="_blank" rel="noopener noreferrer" class="post-link">bsky.app</a>
                 ` : ''}
-                <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Open on bsky.app</a>
+                ${!parentUrl ? `
+                <a href="${window.location.origin}/thread.html?url=${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Contrail</a>
+                <span class="link-separator">·</span>
+                <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">bsky.app</a>
+                ` : ''}
             </div>
             <div class="post-stats">
                 <span class="likes">♡ ${post.likes || 0}</span>
@@ -132,9 +137,9 @@ function createExpandedReplyContent(post, rootAuthorHandle) {
                     <span class="timestamp">${formatTimestamp(post.createdAt)}</span>
                 </div>
                 <div class="post-links">
-                    <a href="thread.html?url=${encodeURIComponent(postUrl)}" class="post-link" target="_blank" rel="noopener noreferrer">Open in Thread View</a>
-                    <span class="link-separator">|</span>
-                    <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Open on bsky.app</a>
+                    <a href="${window.location.origin}/thread.html?url=${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Contrail</a>
+                    <span class="link-separator">·</span>
+                    <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">bsky.app</a>
                 </div>
                 <div class="post-stats">
                     <span class="likes">♡ ${post.likes || 0}</span>
