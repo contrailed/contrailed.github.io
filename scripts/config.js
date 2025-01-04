@@ -1,11 +1,11 @@
 // Thread configuration
 const config = {
     // API settings
-    API_THREAD_DEPTH: 25,
+    API_THREAD_DEPTH: 20,
 
     // Visual layout
     REPLY_INDENT_PX: 24,        // Indentation for each reply level
-    TRUNCATION_LEVEL: 25,       // Level at which to show "Thread continues..." message
+    TRUNCATION_LEVEL: 20,       // Level at which to show "Thread continues..." message
     RECENT_REPLIES_COUNT: 20,   // Number of most recent replies to show by default
     LINE_HEIGHT: 1.4,           // Line height for post content
     LINE_OPACITY: {
