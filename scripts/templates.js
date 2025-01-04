@@ -29,7 +29,7 @@ function createMainPostContent(post) {
             </div>
             <div class="post-links">
                 ${parentUrl ? `
-                <a href="thread.html?url=${encodeURIComponent(parentUrl)}" class="post-link" target="_blank" rel="noopener noreferrer">Open Parent in Thread View</a>
+                <a href="thread.html?url=${encodeURIComponent(parentUrl)}" class="post-link" target="_blank" rel="noopener noreferrer">Parent</a>
                 <span class="link-separator">|</span>
                 ` : ''}
                 <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">bsky.app</a>
