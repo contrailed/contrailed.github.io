@@ -25,4 +25,4 @@ This is a static web application using vanilla JavaScript, HTML, and CSS. No bui
     ├── interactions.js
     ├── formatters.js
     └── threadEmbed.js
-```
+``` 
