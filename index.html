@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/landing.css">
     <script src="scripts/config.js"></script>
     <script src="scripts/threadEmbed.js"></script>
+    <script src="scripts/fetchFeed.js"></script>
     <script>
         function validateForm(event) {
             event.preventDefault();
@@ -33,18 +34,30 @@
             return false;
         }
 
-        // Add featured threads when page loads
-        document.addEventListener('DOMContentLoaded', () => {
+        // Load discover feed threads when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
             const container = document.getElementById('featured-threads');
-            if (container && window.appConfig?.FEATURED_THREADS) {
-                container.innerHTML = `
-                    <h2>Featured Discussions</h2>
-                    ${window.appConfig.FEATURED_THREADS.map(thread => `
-                        <div class="featured-section">
-                            <thread-embed url="${thread.url}"></thread-embed>
-                        </div>
-                    `).join('')}
-                `;
+            if (container) {
+                container.innerHTML = '<h2>Popular Discussions</h2><div class="loading">Loading popular threads...</div>';
+                
+                try {
+                    const threads = await fetchDiscoverFeed();
+                    if (threads.length > 0) {
+                        container.innerHTML = `
+                            <h2>Popular Discussions</h2>
+                            ${threads.map(thread => `
+                                <div class="featured-section">
+                                    <thread-embed url="${thread.url}"></thread-embed>
+                                </div>
+                            `).join('')}
+                        `;
+                    } else {
+                        container.innerHTML = '<h2>Popular Discussions</h2><div class="error">No threads available at the moment.</div>';
+                    }
+                } catch (error) {
+                    console.error('Error loading discover feed:', error);
+                    container.innerHTML = '<h2>Popular Discussions</h2><div class="error">Failed to load popular threads.</div>';
+                }
             }
         });
     </script>

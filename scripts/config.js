@@ -17,24 +17,8 @@ const config = {
     GRADIENT_COLOR: {
         MIN_VALUE: 80,          // Darkest grey value (0-255)
         MAX_VALUE: 255          // Lightest grey value (0-255)
-    },
-
-    // Featured content
-    FEATURED_THREADS: [
-        {
-            url: "https://bsky.app/profile/malwaretech.com/post/3lekkmoc5vs2f",
-            title: "Featured Thread 1"
-        },
-        {
-            url: "https://bsky.app/profile/reuters.com/post/3leue6mxsqk2k",
-            title: "Featured Thread 2"
-        },
-        {
-            url: "https://bsky.app/profile/mcnees.bsky.social/post/3leu5o6upzs2n",
-            title: "Featured Thread 3"
-        }
-    ]
+    }
 };
 
-// Export the configuration object
+// Make config available globally
 window.appConfig = config; 

@@ -22,7 +22,7 @@ This is a static web application using vanilla JavaScript, HTML, and CSS. No bui
     ├── config.js
     ├── api.js
     ├── templates.js
-    ├── interactions.js 
+    ├── interactions.js
     ├── formatters.js
     └── threadEmbed.js
 ```
