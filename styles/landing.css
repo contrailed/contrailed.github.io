@@ -67,7 +67,7 @@ button:hover {
 
 .separator {
     max-width: 800px;
-    margin: 8vh auto;
+    margin: 2vh auto;
     border: none;
     border-top: 1px solid var(--border-color);
 }

@@ -29,15 +29,10 @@ function createMainPostContent(post) {
             </div>
             <div class="post-links">
                 ${parentUrl ? `
-                <a href="${window.location.origin}/thread.html?url=${parentUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Contrail</a>
-                <span class="link-separator">·</span>
-                <a href="${parentUrl}" target="_blank" rel="noopener noreferrer" class="post-link">bsky.app</a>
+                <a href="thread.html?url=${encodeURIComponent(parentUrl)}" class="post-link" target="_blank" rel="noopener noreferrer">Open Parent in Thread View</a>
+                <span class="link-separator">|</span>
                 ` : ''}
-                ${!parentUrl ? `
-                <a href="${window.location.origin}/thread.html?url=${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Contrail</a>
-                <span class="link-separator">·</span>
                 <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">bsky.app</a>
-                ` : ''}
             </div>
             <div class="post-stats">
                 <span class="likes">♡ ${post.likes || 0}</span>
@@ -45,6 +40,14 @@ function createMainPostContent(post) {
             </div>
         </div>
     `;
+}
+
+// Helper function to format handle
+function formatHandle(handle, truncate = false) {
+    if (truncate && handle.endsWith('.bsky.social')) {
+        return handle.replace('.bsky.social', '');
+    }
+    return handle;
 }
 
 function createCollapsedReplyContent(post, rootAuthorHandle) {
@@ -97,7 +100,7 @@ function createCollapsedReplyContent(post, rootAuthorHandle) {
                 ${mediaIndicator}
             </div>
             <div class="user-info">
-                <span class="display-name">${post.author?.displayName || post.author?.handle}</span>
+                <span class="display-name">${post.author?.displayName || formatHandle(post.author?.handle, true)}</span>
             </div>
         </div>
         ${createExpandedReplyContent(post, rootAuthorHandle)}
@@ -133,12 +136,10 @@ function createExpandedReplyContent(post, rootAuthorHandle) {
             <div class="expanded-footer">
                 <div class="expanded-timestamp">
                     <span class="time-ago">${timeAgo}</span>
-                    <span class="dot">·</span>
-                    <span class="timestamp">${formatTimestamp(post.createdAt)}</span>
                 </div>
                 <div class="post-links">
-                    <a href="${window.location.origin}/thread.html?url=${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">Contrail</a>
-                    <span class="link-separator">·</span>
+                    <a href="thread.html?url=${encodeURIComponent(postUrl)}" class="post-link" target="_blank" rel="noopener noreferrer">Contrail</a>
+                    <span class="link-separator">|</span>
                     <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="post-link">bsky.app</a>
                 </div>
                 <div class="post-stats">
@@ -272,3 +273,4 @@ window.renderReplies = renderReplies;
 window.getGradientColor = getGradientColor;
 window.createReplyContent = createReplyContent;
 window.getMaxDepth = getMaxDepth;
+window.formatHandle = formatHandle;

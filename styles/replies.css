@@ -1,7 +1,7 @@
 .reply-post.expanded {
     border: 1px solid var(--border-color);
     border-radius: 0;
-    padding: 6px 12px;
+    padding: 0;
     margin-bottom: 2px;
     background: var(--post-background);
     width: calc(100% - var(--level, 0) * 24px);
@@ -94,10 +94,10 @@
 
 .expanded-view {
     display: none;
-    padding: 6px 12px;
+    padding: 12px;
     background: var(--post-background);
-    border-radius: 8px;
-    margin: 2px 0;
+    border-radius: 0;
+    margin: 0;
     width: 100%;
     box-sizing: border-box;
 }
@@ -113,7 +113,7 @@
 .expanded-header {
     display: flex;
     align-items: center;
-    margin-bottom: 3px;
+    margin-bottom: 8px;
 }
 
 .expanded-header .avatar {
@@ -134,12 +134,12 @@
 }
 
 .expanded-user-info .handle {
-    font-size: 0.7em;
+    font-size: 1.1em;
     color: var(--text-secondary);
 }
 
 .expanded-content {
-    margin: 3px 0;
+    margin: 8px 0;
 }
 
 .expanded-content .post-content {
